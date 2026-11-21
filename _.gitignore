@@ -1,0 +1,25 @@
+# secrets  -- NEVER commit
+.env
+.env.*
+!.env.example
+!env.example
+
+# runtime artefacts
+logs/
+vectordb/
+*.log
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.python-version.bak
+.pytest_cache/
+.ipynb_checkpoints/
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
