@@ -1,0 +1,21 @@
+{
+ "2026-11-21": {
+  "requests": 29,
+  "cost_inr": 13.413888,
+  "words": 414,
+  "audio_sec": 166.56,
+  "stt": 0.302876,
+  "llm": 0.051012,
+  "tts": 4.6,
+  "web": 8.46,
+  "other": 0.0,
+  "paths": {
+   "tts_prewarm": 0,
+   "llm_empty": 2,
+   "kb": 19,
+   "cache": 1,
+   "web_failed": 5,
+   "web": 2
+  }
+ }
+}

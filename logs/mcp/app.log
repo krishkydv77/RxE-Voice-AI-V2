@@ -1,0 +1,451 @@
+2026-11-21 13:46:35 | INFO    | - | MCP tool registered | kb_search
+2026-11-21 13:46:35 | INFO    | - | MCP tool registered | kb_list_sources
+2026-11-21 13:46:35 | INFO    | - | MCP tool registered | kb_reindex
+2026-11-21 13:46:35 | INFO    | - | MCP tool registered | web_search_save
+2026-11-21 13:46:35 | INFO    | - | MCP server start | transport=streamable-http host=127.0.0.1 port=8001
+2026-11-21 13:46:35 | INFO    | - | RAG sync start | dir=C:\Users\qqq\Desktop\v2.222\data_basic files_found=2 force=False
+2026-11-21 13:46:48 | INFO    | - | RAG vector store open | dir=C:\Users\qqq\Desktop\v2.222\vectordb collection=healthcare_knowledge_base
+2026-11-21 13:46:49 | INFO    | - | RAG embed model load start | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-11-21 13:46:57 | INFO    | - | RAG embed model ready | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 load_ms=8740.2
+2026-11-21 13:46:59 | INFO    | - | RAG vector store ready | existing_chunks=0
+2026-11-21 13:46:59 | INFO    | - | RAG index needed | file=healthcare_medical_e_commerce_complete_guide.md reason=new
+2026-11-21 13:46:59 | INFO    | - | RAG load start | file=healthcare_medical_e_commerce_complete_guide.md type=.md size=44.1 KB
+2026-11-21 13:46:59 | INFO    | - | RAG load md | file=healthcare_medical_e_commerce_complete_guide.md chars=45181 chunks=121
+2026-11-21 13:47:08 | INFO    | - | RAG embed+store batch | healthcare_medical_e_commerce_complete_guide.md chunks 1-64/121 took=8506.1 ms
+2026-11-21 13:47:16 | INFO    | - | RAG embed+store batch | healthcare_medical_e_commerce_complete_guide.md chunks 65-121/121 took=7873.7 ms
+2026-11-21 13:47:16 | INFO    | - | RAG incremental | file=healthcare_medical_e_commerce_complete_guide.md total=121 added=121 deleted=0 kept=0
+2026-11-21 13:47:16 | INFO    | - | [RAG_INDEX] {"file": "healthcare_medical_e_commerce_complete_guide.md", "chunks": 121, "added": 121, "deleted": 0, "load_chunk_ms": 137.3, "embed_store_ms": 16380.8}
+2026-11-21 13:47:16 | INFO    | - | RAG index needed | file=serpapi.md reason=new
+2026-11-21 13:47:16 | INFO    | - | RAG load start | file=serpapi.md type=.md size=43.6 KB
+2026-11-21 13:47:16 | INFO    | - | RAG load md | file=serpapi.md chars=43706 chunks=127
+2026-11-21 13:47:23 | INFO    | - | RAG embed+store batch | serpapi.md chunks 1-64/127 took=6901.3 ms
+2026-11-21 13:47:30 | INFO    | - | RAG embed+store batch | serpapi.md chunks 65-127/127 took=7003.3 ms
+2026-11-21 13:47:30 | INFO    | - | RAG incremental | file=serpapi.md total=127 added=127 deleted=0 kept=0
+2026-11-21 13:47:30 | INFO    | - | [RAG_INDEX] {"file": "serpapi.md", "chunks": 127, "added": 127, "deleted": 0, "load_chunk_ms": 15.8, "embed_store_ms": 13905.5}
+2026-11-21 13:47:30 | INFO    | - | CACHE kb version bumped -> 1795249050042426700
+2026-11-21 13:47:31 | INFO    | - | [RAG_SYNC] {"indexed": ["healthcare_medical_e_commerce_complete_guide.md", "serpapi.md"], "skipped": [], "removed": [], "chunks_added": 248, "chunks_deleted": 0, "total_chunks": 248, "sync_ms": 30504.2}
+2026-11-21 13:47:31 | INFO    | - | RAG sync done | indexed=['healthcare_medical_e_commerce_complete_guide.md', 'serpapi.md'] skipped=[] removed=[] total_chunks=248 took=30504.2 ms
+2026-11-21 13:47:31 | INFO    | - | RAG purge_expired | {'expired_chunks_removed': 0, 'expired_entries_removed': 0}
+2026-11-21 13:47:31 | INFO    | - | [RAG_PURGE] {"expired_chunks_removed": 0, "expired_entries_removed": 0}
+2026-11-21 13:47:31 | INFO    | - | RAG reranker load start | model=Xenova/ms-marco-MiniLM-L-6-v2
+2026-11-21 13:47:32 | INFO    | - | RAG reranker ready | load_ms=731.0
+2026-11-21 13:48:03 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 13:48:03 | INFO    | - | CACHE redis client created | url=redis://localhost:6379/0
+2026-11-21 13:48:03 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.32 ttl_left=Nones
+2026-11-21 13:48:03 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=1.32 -> rag.retrieve
+2026-11-21 13:48:04 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 40.5, 'rerank_ms': 599.9, 'compress_ms': 0.1, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 641.3} took=641.3 ms
+2026-11-21 13:48:04 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 40.5, "rerank_ms": 599.9, "compress_ms": 0.1, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 641.3, "top_score": 0.431}
+2026-11-21 13:48:04 | INFO    | - | CACHE set | kind=ret backend=redis ms=1.00 ttl=1800s bytes=631
+2026-11-21 13:48:29 | INFO    | - | TOOL kb_search | query='What is B2C?' top_k=0
+2026-11-21 13:48:29 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=2.21 ttl_left=Nones
+2026-11-21 13:48:29 | INFO    | - | RETRIEVAL cache MISS | q='What is B2C?' get_ms=2.21 -> rag.retrieve
+2026-11-21 13:48:30 | INFO    | - | RAG retrieve | q='What is B2C?' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 23.2, 'rerank_ms': 363.5, 'compress_ms': 0.3, 'one_hit': False, 'returned': 2, 'ctx_chars': 450, 'avg_score': 0.558, 'term_coverage': 1.0, 'ms': 388.0} took=388.0 ms
+2026-11-21 13:48:30 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 23.2, "rerank_ms": 363.5, "compress_ms": 0.3, "one_hit": false, "returned": 2, "ctx_chars": 450, "avg_score": 0.558, "term_coverage": 1.0, "ms": 388.0, "top_score": 0.56}
+2026-11-21 13:48:30 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.88 ttl=1800s bytes=1110
+2026-11-21 13:50:18 | INFO    | - | TOOL kb_search | query='What is B2C in medical sector?' top_k=0
+2026-11-21 13:50:18 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.79 ttl_left=Nones
+2026-11-21 13:50:18 | INFO    | - | RETRIEVAL cache MISS | q='What is B2C in medical sector?' get_ms=0.79 -> rag.retrieve
+2026-11-21 13:50:18 | INFO    | - | RAG retrieve | q='What is B2C in medical sector?' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 33.8, 'rerank_ms': 545.7, 'compress_ms': 0.2, 'one_hit': False, 'returned': 2, 'ctx_chars': 460, 'avg_score': 0.555, 'term_coverage': 1.0, 'ms': 580.3} took=580.3 ms
+2026-11-21 13:50:18 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 33.8, "rerank_ms": 545.7, "compress_ms": 0.2, "one_hit": false, "returned": 2, "ctx_chars": 460, "avg_score": 0.555, "term_coverage": 1.0, "ms": 580.3, "top_score": 0.541}
+2026-11-21 13:50:18 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.66 ttl=1800s bytes=1140
+2026-11-21 13:58:19 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 13:58:19 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=1.84 ttl_left=1185s
+2026-11-21 13:58:19 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=1185s get_ms=1.84
+2026-11-21 13:58:34 | INFO    | - | TOOL kb_search | query='What is B2C in medical sector?' top_k=0
+2026-11-21 13:58:34 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.66 ttl_left=1305s
+2026-11-21 13:58:34 | INFO    | - | RETRIEVAL cache HIT | q='What is B2C in medical sector?' ttl_left=1305s get_ms=0.66
+2026-11-21 14:03:15 | INFO    | - | TOOL kb_search | query='Medical e-commerce, voice regular e-commerce.' top_k=0
+2026-11-21 14:03:15 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.83 ttl_left=Nones
+2026-11-21 14:03:15 | INFO    | - | RETRIEVAL cache MISS | q='Medical e-commerce, voice regular e-commerce.' get_ms=0.83 -> rag.retrieve
+2026-11-21 14:03:15 | INFO    | - | RAG retrieve | q='Medical e-commerce, voice regular e-commerce.' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 66.3, 'rerank_ms': 332.7, 'compress_ms': 0.2, 'one_hit': False, 'returned': 2, 'ctx_chars': 386, 'avg_score': 0.655, 'term_coverage': 0.75, 'ms': 399.9} took=399.9 ms
+2026-11-21 14:03:15 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 66.3, "rerank_ms": 332.7, "compress_ms": 0.2, "one_hit": false, "returned": 2, "ctx_chars": 386, "avg_score": 0.655, "term_coverage": 0.75, "ms": 399.9, "top_score": 0.72}
+2026-11-21 14:03:15 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.91 ttl=1800s bytes=1148
+2026-11-21 14:17:21 | INFO    | - | MCP tool registered | kb_search
+2026-11-21 14:17:21 | INFO    | - | MCP tool registered | kb_list_sources
+2026-11-21 14:17:21 | INFO    | - | MCP tool registered | kb_reindex
+2026-11-21 14:17:21 | INFO    | - | MCP tool registered | web_search_save
+2026-11-21 14:17:21 | INFO    | - | MCP server start | transport=streamable-http host=127.0.0.1 port=8001
+2026-11-21 14:17:21 | INFO    | - | RAG sync start | dir=C:\Users\qqq\Desktop\v2.222\data_basic files_found=3 force=False
+2026-11-21 14:17:24 | INFO    | - | RAG vector store open | dir=C:\Users\qqq\Desktop\v2.222\vectordb collection=healthcare_knowledge_base
+2026-11-21 14:17:24 | INFO    | - | RAG embed model load start | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-11-21 14:17:27 | INFO    | - | RAG embed model ready | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 load_ms=2962.5
+2026-11-21 14:17:27 | INFO    | - | RAG vector store ready | existing_chunks=248
+2026-11-21 14:17:27 | INFO    | - | RAG index needed | file=e-com.pdf reason=new
+2026-11-21 14:17:27 | INFO    | - | RAG load start | file=e-com.pdf type=.pdf size=199.6 KB
+2026-11-21 14:17:34 | INFO    | - | RAG load pdf | file=e-com.pdf pages=41 pages_with_text=41
+2026-11-21 14:17:34 | INFO    | - | RAG chunk pdf | file=e-com.pdf chunks=214
+2026-11-21 14:17:40 | INFO    | - | RAG embed+store batch | e-com.pdf chunks 1-64/214 took=6504.8 ms
+2026-11-21 14:17:47 | INFO    | - | RAG embed+store batch | e-com.pdf chunks 65-128/214 took=6090.8 ms
+2026-11-21 14:17:53 | INFO    | - | RAG embed+store batch | e-com.pdf chunks 129-192/214 took=6297.6 ms
+2026-11-21 14:17:55 | INFO    | - | RAG embed+store batch | e-com.pdf chunks 193-214/214 took=2296.9 ms
+2026-11-21 14:17:55 | INFO    | - | RAG incremental | file=e-com.pdf total=214 added=214 deleted=0 kept=0
+2026-11-21 14:17:55 | INFO    | - | [RAG_INDEX] {"file": "e-com.pdf", "chunks": 214, "added": 214, "deleted": 0, "load_chunk_ms": 6788.7, "embed_store_ms": 21191.9}
+2026-11-21 14:17:55 | INFO    | - | CACHE kb version bumped -> 1795250875688696800
+2026-11-21 14:17:56 | INFO    | - | [RAG_SYNC] {"indexed": ["e-com.pdf"], "skipped": ["healthcare_medical_e_commerce_complete_guide.md", "serpapi.md"], "removed": [], "chunks_added": 214, "chunks_deleted": 0, "total_chunks": 462, "sync_ms": 28016.6}
+2026-11-21 14:17:56 | INFO    | - | RAG sync done | indexed=['e-com.pdf'] skipped=['healthcare_medical_e_commerce_complete_guide.md', 'serpapi.md'] removed=[] total_chunks=462 took=28016.6 ms
+2026-11-21 14:17:56 | INFO    | - | RAG purge_expired | {'expired_chunks_removed': 0, 'expired_entries_removed': 0}
+2026-11-21 14:17:56 | INFO    | - | [RAG_PURGE] {"expired_chunks_removed": 0, "expired_entries_removed": 0}
+2026-11-21 14:17:56 | INFO    | - | RAG reranker load start | model=Xenova/ms-marco-MiniLM-L-6-v2
+2026-11-21 14:17:56 | INFO    | - | RAG reranker ready | load_ms=571.1
+2026-11-21 14:22:08 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 14:22:08 | INFO    | - | CACHE redis client created | url=redis://localhost:6379/0
+2026-11-21 14:22:08 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.09 ttl_left=Nones
+2026-11-21 14:22:08 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=1.09 -> rag.retrieve
+2026-11-21 14:22:08 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 30.5, 'rerank_ms': 478.8, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 510.2} took=510.2 ms
+2026-11-21 14:22:08 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 30.5, "rerank_ms": 478.8, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 510.2, "top_score": 0.431}
+2026-11-21 14:22:08 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.76 ttl=300s bytes=631
+2026-11-21 14:23:39 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 14:23:39 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.81 ttl_left=209s
+2026-11-21 14:23:39 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=209s get_ms=0.81
+2026-11-21 14:24:25 | INFO    | - | TOOL kb_search | query='I realize some time pain on my heart and headache.' top_k=0
+2026-11-21 14:24:25 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.86 ttl_left=Nones
+2026-11-21 14:24:25 | INFO    | - | RETRIEVAL cache MISS | q='I realize some time pain on my heart and headache.' get_ms=0.86 -> rag.retrieve
+2026-11-21 14:24:26 | INFO    | - | RAG retrieve | q='I realize some time pain on my heart and headache.' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 44.2, 'rerank_ms': 863.0, 'compress_ms': 0.3, 'one_hit': False, 'returned': 3, 'ctx_chars': 497, 'avg_score': 0.384, 'term_coverage': 0.5, 'ms': 908.3} took=908.3 ms
+2026-11-21 14:24:26 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 44.2, "rerank_ms": 863.0, "compress_ms": 0.3, "one_hit": false, "returned": 3, "ctx_chars": 497, "avg_score": 0.384, "term_coverage": 0.5, "ms": 908.3, "top_score": 0.38}
+2026-11-21 14:24:26 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.56 ttl=300s bytes=1524
+2026-11-21 17:21:04 | INFO    | - | MCP tool registered | kb_search
+2026-11-21 17:21:04 | INFO    | - | MCP tool registered | kb_list_sources
+2026-11-21 17:21:04 | INFO    | - | MCP tool registered | kb_reindex
+2026-11-21 17:21:04 | INFO    | - | MCP tool registered | web_search_save
+2026-11-21 17:21:04 | INFO    | - | MCP server start | transport=streamable-http host=127.0.0.1 port=8001
+2026-11-21 17:21:04 | INFO    | - | RAG sync start | dir=C:\Users\qqq\Desktop\v2.222\data_basic files_found=3 force=False
+2026-11-21 17:21:07 | INFO    | - | RAG vector store open | dir=C:\Users\qqq\Desktop\v2.222\vectordb collection=healthcare_knowledge_base
+2026-11-21 17:21:07 | INFO    | - | RAG embed model load start | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-11-21 17:21:11 | INFO    | - | RAG embed model ready | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 load_ms=3595.9
+2026-11-21 17:21:12 | INFO    | - | RAG vector store ready | existing_chunks=462
+2026-11-21 17:21:12 | INFO    | - | [RAG_SYNC] {"indexed": [], "skipped": ["e-com.pdf", "healthcare_medical_e_commerce_complete_guide.md", "serpapi.md"], "removed": [], "chunks_added": 0, "chunks_deleted": 0, "total_chunks": 462, "sync_ms": 1.6}
+2026-11-21 17:21:12 | INFO    | - | RAG sync done | indexed=[] skipped=['e-com.pdf', 'healthcare_medical_e_commerce_complete_guide.md', 'serpapi.md'] removed=[] total_chunks=462 took=1.6 ms
+2026-11-21 17:21:12 | INFO    | - | RAG purge_expired | {'expired_chunks_removed': 0, 'expired_entries_removed': 0}
+2026-11-21 17:21:12 | INFO    | - | [RAG_PURGE] {"expired_chunks_removed": 0, "expired_entries_removed": 0}
+2026-11-21 17:21:12 | INFO    | - | RAG reranker load start | model=Xenova/ms-marco-MiniLM-L-6-v2
+2026-11-21 17:21:12 | INFO    | - | RAG reranker ready | load_ms=474.6
+2026-11-21 17:21:31 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:21:31 | INFO    | - | CACHE redis client created | url=redis://localhost:6379/0
+2026-11-21 17:21:31 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.54 ttl_left=Nones
+2026-11-21 17:21:31 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=0.54 -> rag.retrieve
+2026-11-21 17:21:32 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 40.6, 'rerank_ms': 588.9, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 630.1} took=630.1 ms
+2026-11-21 17:21:32 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 40.6, "rerank_ms": 588.9, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 630.1, "top_score": 0.431}
+2026-11-21 17:21:32 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.69 ttl=300s bytes=631
+2026-11-21 17:22:29 | INFO    | - | TOOL kb_search | query='What are the symptoms of malaria?' top_k=0
+2026-11-21 17:22:29 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.64 ttl_left=Nones
+2026-11-21 17:22:29 | INFO    | - | RETRIEVAL cache MISS | q='What are the symptoms of malaria?' get_ms=0.64 -> rag.retrieve
+2026-11-21 17:22:29 | INFO    | - | RAG retrieve | q='What are the symptoms of malaria?' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 32.6, 'rerank_ms': 436.6, 'compress_ms': 0.3, 'one_hit': False, 'returned': 2, 'ctx_chars': 367, 'avg_score': 0.569, 'term_coverage': 0.5, 'ms': 470.2} took=470.2 ms
+2026-11-21 17:22:29 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 32.6, "rerank_ms": 436.6, "compress_ms": 0.3, "one_hit": false, "returned": 2, "ctx_chars": 367, "avg_score": 0.569, "term_coverage": 0.5, "ms": 470.2, "top_score": 0.597}
+2026-11-21 17:22:29 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.57 ttl=300s bytes=1242
+2026-11-21 17:22:50 | INFO    | - | TOOL kb_search | query='माइग्रेन की लक्षन क्या हैं?' top_k=0
+2026-11-21 17:22:50 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.58 ttl_left=Nones
+2026-11-21 17:22:50 | INFO    | - | RETRIEVAL cache MISS | q='माइग्रेन की लक्षन क्या हैं?' get_ms=0.58 -> rag.retrieve
+2026-11-21 17:22:50 | INFO    | - | RAG retrieve | q='माइग्रेन की लक्षन क्या हैं?' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': False, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 37.1, 'rerank_ms': 0.0, 'compress_ms': 0.0, 'one_hit': False, 'returned': 2, 'ctx_chars': 340, 'avg_score': 0.388, 'term_coverage': None, 'ms': 37.7} took=37.7 ms
+2026-11-21 17:22:50 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": false, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 37.1, "rerank_ms": 0.0, "compress_ms": 0.0, "one_hit": false, "returned": 2, "ctx_chars": 340, "avg_score": 0.388, "term_coverage": null, "ms": 37.7, "top_score": 0.394}
+2026-11-21 17:22:50 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.71 ttl=300s bytes=872
+2026-11-21 17:24:24 | INFO    | - | TOOL kb_search | query='What is the new regulations for medical e-commerce in 12-20?' top_k=0
+2026-11-21 17:24:24 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.47 ttl_left=Nones
+2026-11-21 17:24:24 | INFO    | - | RETRIEVAL cache MISS | q='What is the new regulations for medical e-commerce in 12-20?' get_ms=0.47 -> rag.retrieve
+2026-11-21 17:24:24 | INFO    | - | RAG retrieve | q='What is the new regulations for medical e-commerce in 12-20?' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 35.8, 'rerank_ms': 324.0, 'compress_ms': 0.2, 'one_hit': False, 'returned': 3, 'ctx_chars': 281, 'avg_score': 0.687, 'term_coverage': 0.5, 'ms': 360.5} took=360.5 ms
+2026-11-21 17:24:24 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 35.8, "rerank_ms": 324.0, "compress_ms": 0.2, "one_hit": false, "returned": 3, "ctx_chars": 281, "avg_score": 0.687, "term_coverage": 0.5, "ms": 360.5, "top_score": 0.732}
+2026-11-21 17:24:24 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.51 ttl=300s bytes=1290
+2026-11-21 17:24:55 | INFO    | - | TOOL kb_search | query='What is the new rule for medical e-commerce in 2020?' top_k=0
+2026-11-21 17:24:55 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.61 ttl_left=Nones
+2026-11-21 17:24:55 | INFO    | - | RETRIEVAL cache MISS | q='What is the new rule for medical e-commerce in 2020?' get_ms=0.61 -> rag.retrieve
+2026-11-21 17:24:55 | INFO    | - | RAG retrieve | q='What is the new rule for medical e-commerce in 2020?' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 31.0, 'rerank_ms': 333.9, 'compress_ms': 0.2, 'one_hit': False, 'returned': 3, 'ctx_chars': 281, 'avg_score': 0.699, 'term_coverage': 0.4, 'ms': 366.2} took=366.2 ms
+2026-11-21 17:24:55 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 31.0, "rerank_ms": 333.9, "compress_ms": 0.2, "one_hit": false, "returned": 3, "ctx_chars": 281, "avg_score": 0.699, "term_coverage": 0.4, "ms": 366.2, "top_score": 0.748}
+2026-11-21 17:24:55 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.53 ttl=300s bytes=1288
+2026-11-21 17:27:00 | INFO    | - | TOOL kb_search | query='Indian government new rule for medical sector. Those are the sub-bis.' top_k=0
+2026-11-21 17:27:00 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.78 ttl_left=Nones
+2026-11-21 17:27:00 | INFO    | - | RETRIEVAL cache MISS | q='Indian government new rule for medical sector. Those are the sub-bis.' get_ms=0.78 -> rag.retrieve
+2026-11-21 17:27:00 | INFO    | - | RAG retrieve | q='Indian government new rule for medical sector. Those are the sub-bis.' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 37.1, 'rerank_ms': 210.7, 'compress_ms': 0.3, 'one_hit': False, 'returned': 3, 'ctx_chars': 528, 'avg_score': 0.63, 'term_coverage': 0.56, 'ms': 248.5} took=248.5 ms
+2026-11-21 17:27:00 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 37.1, "rerank_ms": 210.7, "compress_ms": 0.3, "one_hit": false, "returned": 3, "ctx_chars": 528, "avg_score": 0.63, "term_coverage": 0.56, "ms": 248.5, "top_score": 0.615}
+2026-11-21 17:27:00 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.67 ttl=300s bytes=1359
+2026-11-21 17:45:34 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:45:34 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.38 ttl_left=Nones
+2026-11-21 17:45:34 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=1.38 -> rag.retrieve
+2026-11-21 17:45:35 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 226.8, 'rerank_ms': 593.2, 'compress_ms': 3.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 823.6} took=823.6 ms
+2026-11-21 17:45:35 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 226.8, "rerank_ms": 593.2, "compress_ms": 3.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 823.6, "top_score": 0.431}
+2026-11-21 17:45:35 | INFO    | - | CACHE set | kind=ret backend=redis ms=5.56 ttl=300s bytes=632
+2026-11-21 17:45:46 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:45:46 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=1.48 ttl_left=289s
+2026-11-21 17:45:46 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=289s get_ms=1.48
+2026-11-21 17:46:04 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:46:04 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.88 ttl_left=271s
+2026-11-21 17:46:04 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=271s get_ms=0.88
+2026-11-21 17:46:10 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:46:10 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.63 ttl_left=265s
+2026-11-21 17:46:10 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=265s get_ms=0.63
+2026-11-21 17:46:35 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:46:35 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.91 ttl_left=240s
+2026-11-21 17:46:35 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=240s get_ms=0.91
+2026-11-21 17:46:58 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:46:58 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.73 ttl_left=217s
+2026-11-21 17:46:58 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=217s get_ms=0.73
+2026-11-21 17:47:50 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:47:50 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.80 ttl_left=165s
+2026-11-21 17:47:50 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=165s get_ms=0.80
+2026-11-21 17:47:57 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:47:57 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.44 ttl_left=159s
+2026-11-21 17:47:57 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=159s get_ms=0.44
+2026-11-21 17:48:11 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:48:11 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.81 ttl_left=145s
+2026-11-21 17:48:11 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=145s get_ms=0.81
+2026-11-21 17:48:43 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:48:43 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.74 ttl_left=112s
+2026-11-21 17:48:43 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=112s get_ms=0.74
+2026-11-21 17:51:57 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:51:57 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.48 ttl_left=Nones
+2026-11-21 17:51:57 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=0.48 -> rag.retrieve
+2026-11-21 17:51:57 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 30.3, 'rerank_ms': 506.1, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 536.7} took=536.7 ms
+2026-11-21 17:51:57 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 30.3, "rerank_ms": 506.1, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 536.7, "top_score": 0.431}
+2026-11-21 17:51:57 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.68 ttl=300s bytes=631
+2026-11-21 17:53:12 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 17:53:12 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=1.04 ttl_left=226s
+2026-11-21 17:53:12 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=226s get_ms=1.04
+2026-11-21 17:53:42 | INFO    | - | TOOL kb_search | query='What are the CD SEO rules for selling medical online in India?' top_k=0
+2026-11-21 17:53:42 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.61 ttl_left=Nones
+2026-11-21 17:53:42 | INFO    | - | RETRIEVAL cache MISS | q='What are the CD SEO rules for selling medical online in India?' get_ms=0.61 -> rag.retrieve
+2026-11-21 17:53:43 | INFO    | - | RAG retrieve | q='What are the CD SEO rules for selling medical online in India?' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 157.2, 'rerank_ms': 399.8, 'compress_ms': 0.3, 'one_hit': False, 'returned': 3, 'ctx_chars': 385, 'avg_score': 0.567, 'term_coverage': 0.5, 'ms': 558.0} took=558.0 ms
+2026-11-21 17:53:43 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 157.2, "rerank_ms": 399.8, "compress_ms": 0.3, "one_hit": false, "returned": 3, "ctx_chars": 385, "avg_score": 0.567, "term_coverage": 0.5, "ms": 558.0, "top_score": 0.556}
+2026-11-21 17:53:43 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.62 ttl=300s bytes=1431
+2026-11-21 17:56:16 | INFO    | - | TOOL kb_search | query='लू लगने पर क्या करना चाहिएं?' top_k=0
+2026-11-21 17:56:16 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.88 ttl_left=Nones
+2026-11-21 17:56:16 | INFO    | - | RETRIEVAL cache MISS | q='लू लगने पर क्या करना चाहिएं?' get_ms=0.88 -> rag.retrieve
+2026-11-21 17:56:16 | INFO    | - | RAG retrieve | q='लू लगने पर क्या करना चाहिएं?' {'k': 2, 'fetched': 6, 'after_filter': 1, 'reranked': False, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 56.0, 'rerank_ms': 0.0, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 317, 'avg_score': 0.25, 'term_coverage': None, 'ms': 56.5} took=56.5 ms
+2026-11-21 17:56:16 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 1, "reranked": false, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 56.0, "rerank_ms": 0.0, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 317, "avg_score": 0.25, "term_coverage": null, "ms": 56.5, "top_score": 0.25}
+2026-11-21 17:56:16 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.85 ttl=300s bytes=870
+2026-11-21 17:57:31 | INFO    | - | TOOL kb_search | query='Indian government new rule for election 2026.' top_k=0
+2026-11-21 17:57:31 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.83 ttl_left=Nones
+2026-11-21 17:57:31 | INFO    | - | RETRIEVAL cache MISS | q='Indian government new rule for election 2026.' get_ms=0.83 -> rag.retrieve
+2026-11-21 17:57:32 | INFO    | - | RAG retrieve | q='Indian government new rule for election 2026.' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 36.7, 'rerank_ms': 622.2, 'compress_ms': 0.3, 'one_hit': False, 'returned': 3, 'ctx_chars': 527, 'avg_score': 0.542, 'term_coverage': 0.67, 'ms': 659.7} took=659.7 ms
+2026-11-21 17:57:32 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 36.7, "rerank_ms": 622.2, "compress_ms": 0.3, "one_hit": false, "returned": 3, "ctx_chars": 527, "avg_score": 0.542, "term_coverage": 0.67, "ms": 659.7, "top_score": 0.516}
+2026-11-21 17:57:32 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.83 ttl=300s bytes=1357
+2026-11-21 17:57:33 | INFO    | - | TOOL web_search_save | question='Indian government new rule for election 2026.' search_query='Indian Government New Plan 2026 Medical Sector details.'
+2026-11-21 17:57:33 | INFO    | - | CACHE get | kind=web hit=False backend=redis ms=1.00 ttl_left=Nones
+2026-11-21 17:57:33 | INFO    | - | SERPAPI start | q='Indian Government New Plan 2026 Medical Sector details.' hl=en
+2026-11-21 17:57:34 | INFO    | - | SERPAPI trusted-domain filter | dropped=6 kept_sources=0 domains=[]
+2026-11-21 17:57:34 | INFO    | - | [SERPAPI] {"status": "ok", "found": false, "latency_ms": 1640.5, "organic": 9, "has_answer_box": false, "evidence_chars": 0, "untrusted_dropped": 6, "trusted_domains": []}
+2026-11-21 17:57:34 | INFO    | - | SERPAPI done | found=False organic=9 answer_box=False took=1640.5 ms | answer=''
+2026-11-21 17:57:34 | WARNING | - | SERPAPI no trusted-domain result (strict mode) | q='Indian Government New Plan 2026 Medical Sector details.' dropped=6
+2026-11-21 17:57:34 | INFO    | - | CACHE set | kind=web backend=redis ms=0.61 ttl=600s bytes=76
+2026-11-21 17:57:51 | INFO    | - | TOOL kb_search | query='Indian government election candidate of medical rules election for 2026' top_k=0
+2026-11-21 17:57:51 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.37 ttl_left=Nones
+2026-11-21 17:57:51 | INFO    | - | RETRIEVAL cache MISS | q='Indian government election candidate of medical rules election for 2026' get_ms=0.37 -> rag.retrieve
+2026-11-21 17:57:51 | INFO    | - | RAG retrieve | q='Indian government election candidate of medical rules election for 2026' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 33.2, 'rerank_ms': 233.0, 'compress_ms': 0.1, 'one_hit': False, 'returned': 3, 'ctx_chars': 409, 'avg_score': 0.577, 'term_coverage': 0.57, 'ms': 285.9} took=285.9 ms
+2026-11-21 17:57:51 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 33.2, "rerank_ms": 233.0, "compress_ms": 0.1, "one_hit": false, "returned": 3, "ctx_chars": 409, "avg_score": 0.577, "term_coverage": 0.57, "ms": 285.9, "top_score": 0.564}
+2026-11-21 17:57:51 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.81 ttl=300s bytes=1218
+2026-11-21 17:57:52 | INFO    | - | TOOL web_search_save | question='Indian government election candidate of medical rules election for 2026' search_query='Indian Government New Plan 2026 Medical Sector details.'
+2026-11-21 17:57:52 | INFO    | - | CACHE get | kind=web hit=True backend=redis ms=0.57 ttl_left=583s
+2026-11-21 17:57:52 | INFO    | - | SERPAPI cache HIT | q='Indian Government New Plan 2026 Medical Sector details.' found=False ttl_left=583s (paid search saved)
+2026-11-21 17:57:52 | INFO    | - | [SERPAPI] {"status": "cache_hit", "found": false, "latency_ms": 0.9, "cache_ttl_sec": 583}
+2026-11-21 18:02:44 | INFO    | - | TOOL kb_search | query='WH find new release 2026' top_k=0
+2026-11-21 18:02:44 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.48 ttl_left=Nones
+2026-11-21 18:02:44 | INFO    | - | RETRIEVAL cache MISS | q='WH find new release 2026' get_ms=0.48 -> rag.retrieve
+2026-11-21 18:02:45 | INFO    | - | RAG retrieve | q='WH find new release 2026' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 51.2, 'rerank_ms': 255.8, 'compress_ms': 0.2, 'one_hit': False, 'returned': 2, 'ctx_chars': 388, 'avg_score': 0.401, 'term_coverage': 0.5, 'ms': 307.6} took=307.6 ms
+2026-11-21 18:02:45 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 51.2, "rerank_ms": 255.8, "compress_ms": 0.2, "one_hit": false, "returned": 2, "ctx_chars": 388, "avg_score": 0.401, "term_coverage": 0.5, "ms": 307.6, "top_score": 0.394}
+2026-11-21 18:02:45 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.61 ttl=300s bytes=1066
+2026-11-21 18:12:20 | INFO    | - | TOOL kb_search | query='WHO find new disease in 2026.' top_k=0
+2026-11-21 18:12:20 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.81 ttl_left=Nones
+2026-11-21 18:12:20 | INFO    | - | RETRIEVAL cache MISS | q='WHO find new disease in 2026.' get_ms=0.81 -> rag.retrieve
+2026-11-21 18:12:21 | INFO    | - | RAG retrieve | q='WHO find new disease in 2026.' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 53.9, 'rerank_ms': 275.8, 'compress_ms': 0.3, 'one_hit': False, 'returned': 2, 'ctx_chars': 446, 'avg_score': 0.611, 'term_coverage': 0.4, 'ms': 330.6} took=330.6 ms
+2026-11-21 18:12:21 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 53.9, "rerank_ms": 275.8, "compress_ms": 0.3, "one_hit": false, "returned": 2, "ctx_chars": 446, "avg_score": 0.611, "term_coverage": 0.4, "ms": 330.6, "top_score": 0.574}
+2026-11-21 18:12:21 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.63 ttl=300s bytes=1093
+2026-11-21 18:20:32 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 18:20:32 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.89 ttl_left=Nones
+2026-11-21 18:20:32 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=0.89 -> rag.retrieve
+2026-11-21 18:20:33 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 53.8, 'rerank_ms': 810.3, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 865.8} took=865.8 ms
+2026-11-21 18:20:33 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 53.8, "rerank_ms": 810.3, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 865.8, "top_score": 0.431}
+2026-11-21 18:20:33 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.93 ttl=300s bytes=631
+2026-11-21 18:26:12 | INFO    | - | MCP tool registered | kb_search
+2026-11-21 18:26:12 | INFO    | - | MCP tool registered | kb_list_sources
+2026-11-21 18:26:12 | INFO    | - | MCP tool registered | kb_reindex
+2026-11-21 18:26:12 | INFO    | - | MCP tool registered | web_search_save
+2026-11-21 18:26:12 | INFO    | - | MCP server start | transport=streamable-http host=127.0.0.1 port=8001
+2026-11-21 18:26:12 | INFO    | - | RAG sync start | dir=C:\Users\qqq\Desktop\v2.222\data_basic files_found=3 force=False
+2026-11-21 18:26:17 | INFO    | - | RAG vector store open | dir=C:\Users\qqq\Desktop\v2.222\vectordb collection=healthcare_knowledge_base
+2026-11-21 18:26:17 | INFO    | - | RAG embed model load start | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-11-21 18:26:21 | INFO    | - | RAG embed model ready | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 load_ms=4580.6
+2026-11-21 18:26:22 | INFO    | - | RAG vector store ready | existing_chunks=462
+2026-11-21 18:26:22 | INFO    | - | [RAG_SYNC] {"indexed": [], "skipped": ["e-com.pdf", "healthcare_medical_e_commerce_complete_guide.md", "serpapi.md"], "removed": [], "chunks_added": 0, "chunks_deleted": 0, "total_chunks": 462, "sync_ms": 1.7}
+2026-11-21 18:26:22 | INFO    | - | RAG sync done | indexed=[] skipped=['e-com.pdf', 'healthcare_medical_e_commerce_complete_guide.md', 'serpapi.md'] removed=[] total_chunks=462 took=1.7 ms
+2026-11-21 18:26:22 | INFO    | - | RAG purge_expired | {'expired_chunks_removed': 0, 'expired_entries_removed': 0}
+2026-11-21 18:26:22 | INFO    | - | [RAG_PURGE] {"expired_chunks_removed": 0, "expired_entries_removed": 0}
+2026-11-21 18:26:22 | INFO    | - | RAG reranker load start | model=Xenova/ms-marco-MiniLM-L-6-v2
+2026-11-21 18:26:23 | INFO    | - | RAG reranker ready | load_ms=549.6
+2026-11-21 18:27:18 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 18:27:19 | INFO    | - | CACHE redis client created | url=redis://localhost:6379/0
+2026-11-21 18:27:19 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.63 ttl_left=Nones
+2026-11-21 18:27:19 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=0.63 -> rag.retrieve
+2026-11-21 18:27:19 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 35.9, 'rerank_ms': 711.8, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 750.9} took=750.9 ms
+2026-11-21 18:27:19 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 35.9, "rerank_ms": 711.8, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 750.9, "top_score": 0.431}
+2026-11-21 18:27:19 | INFO    | - | CACHE set | kind=ret backend=redis ms=1.40 ttl=300s bytes=631
+2026-11-21 18:27:55 | INFO    | - | TOOL kb_search | query='Typhoid Vaccine Recomendation 2026' top_k=0
+2026-11-21 18:27:55 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.71 ttl_left=Nones
+2026-11-21 18:27:55 | INFO    | - | RETRIEVAL cache MISS | q='Typhoid Vaccine Recomendation 2026' get_ms=0.71 -> rag.retrieve
+2026-11-21 18:27:56 | INFO    | - | RAG retrieve | q='Typhoid Vaccine Recomendation 2026' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 47.9, 'rerank_ms': 354.8, 'compress_ms': 0.3, 'one_hit': False, 'returned': 2, 'ctx_chars': 343, 'avg_score': 0.428, 'term_coverage': 0.25, 'ms': 403.8} took=403.8 ms
+2026-11-21 18:27:56 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 47.9, "rerank_ms": 354.8, "compress_ms": 0.3, "one_hit": false, "returned": 2, "ctx_chars": 343, "avg_score": 0.428, "term_coverage": 0.25, "ms": 403.8, "top_score": 0.406}
+2026-11-21 18:27:56 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.57 ttl=300s bytes=990
+2026-11-21 18:35:12 | INFO    | - | MCP tool registered | kb_search
+2026-11-21 18:35:12 | INFO    | - | MCP tool registered | kb_list_sources
+2026-11-21 18:35:12 | INFO    | - | MCP tool registered | kb_reindex
+2026-11-21 18:35:12 | INFO    | - | MCP tool registered | web_search_save
+2026-11-21 18:35:12 | INFO    | - | MCP server start | transport=streamable-http host=127.0.0.1 port=8001
+2026-11-21 18:35:12 | INFO    | - | RAG sync start | dir=C:\Users\qqq\Desktop\v2.222\data_basic files_found=3 force=False
+2026-11-21 18:35:16 | INFO    | - | RAG vector store open | dir=C:\Users\qqq\Desktop\v2.222\vectordb collection=healthcare_knowledge_base
+2026-11-21 18:35:16 | INFO    | - | RAG embed model load start | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-11-21 18:35:20 | INFO    | - | RAG embed model ready | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 load_ms=3863.9
+2026-11-21 18:35:20 | INFO    | - | RAG vector store ready | existing_chunks=462
+2026-11-21 18:35:20 | INFO    | - | [RAG_SYNC] {"indexed": [], "skipped": ["e-com.pdf", "healthcare_medical_e_commerce_complete_guide.md", "serpapi.md"], "removed": [], "chunks_added": 0, "chunks_deleted": 0, "total_chunks": 462, "sync_ms": 1.4}
+2026-11-21 18:35:20 | INFO    | - | RAG sync done | indexed=[] skipped=['e-com.pdf', 'healthcare_medical_e_commerce_complete_guide.md', 'serpapi.md'] removed=[] total_chunks=462 took=1.4 ms
+2026-11-21 18:35:20 | INFO    | - | RAG purge_expired | {'expired_chunks_removed': 0, 'expired_entries_removed': 0}
+2026-11-21 18:35:20 | INFO    | - | [RAG_PURGE] {"expired_chunks_removed": 0, "expired_entries_removed": 0}
+2026-11-21 18:35:20 | INFO    | - | RAG reranker load start | model=Xenova/ms-marco-MiniLM-L-6-v2
+2026-11-21 18:35:21 | INFO    | - | RAG reranker ready | load_ms=598.6
+2026-11-21 18:35:33 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 18:35:33 | INFO    | - | CACHE redis client created | url=redis://localhost:6379/0
+2026-11-21 18:35:33 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.42 ttl_left=Nones
+2026-11-21 18:35:33 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=0.42 -> rag.retrieve
+2026-11-21 18:35:34 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 18.0, 'rerank_ms': 567.5, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 586.2} took=586.2 ms
+2026-11-21 18:35:34 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 18.0, "rerank_ms": 567.5, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 586.2, "top_score": 0.431}
+2026-11-21 18:35:34 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.65 ttl=300s bytes=631
+2026-11-21 18:35:53 | INFO    | - | TOOL kb_search | query='TIFID new vaccine recombination 2026' top_k=0
+2026-11-21 18:35:53 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.57 ttl_left=Nones
+2026-11-21 18:35:53 | INFO    | - | RETRIEVAL cache MISS | q='TIFID new vaccine recombination 2026' get_ms=1.57 -> rag.retrieve
+2026-11-21 18:35:54 | INFO    | - | RAG retrieve | q='TIFID new vaccine recombination 2026' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 38.6, 'rerank_ms': 401.5, 'compress_ms': 0.6, 'one_hit': False, 'returned': 2, 'ctx_chars': 343, 'avg_score': 0.419, 'term_coverage': 0.2, 'ms': 441.2} took=441.2 ms
+2026-11-21 18:35:54 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 38.6, "rerank_ms": 401.5, "compress_ms": 0.6, "one_hit": false, "returned": 2, "ctx_chars": 343, "avg_score": 0.419, "term_coverage": 0.2, "ms": 441.2, "top_score": 0.434}
+2026-11-21 18:35:54 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.60 ttl=300s bytes=992
+2026-11-21 18:35:55 | INFO    | - | TOOL web_search_save | question='TIFID new vaccine recombination 2026' search_query='TIFID new vaccine recombination 2026 healthcare context.'
+2026-11-21 18:35:55 | INFO    | - | CACHE get | kind=web hit=False backend=redis ms=3.34 ttl_left=Nones
+2026-11-21 18:35:55 | INFO    | - | SERPAPI start | q='TIFID new vaccine recombination 2026 healthcare context.' hl=en
+2026-11-21 18:35:57 | INFO    | - | SERPAPI trusted-domain filter | dropped=6 kept_sources=0 domains=[]
+2026-11-21 18:35:57 | INFO    | - | [SERPAPI] {"status": "ok", "found": false, "latency_ms": 2161.0, "organic": 9, "has_answer_box": false, "evidence_chars": 0, "untrusted_dropped": 6, "trusted_domains": []}
+2026-11-21 18:35:57 | INFO    | - | SERPAPI done | found=False organic=9 answer_box=False took=2161.0 ms | answer=''
+2026-11-21 18:35:57 | WARNING | - | SERPAPI no trusted-domain result (strict mode) | q='TIFID new vaccine recombination 2026 healthcare context.' dropped=6
+2026-11-21 18:35:57 | INFO    | - | CACHE set | kind=web backend=redis ms=17.15 ttl=600s bytes=76
+2026-11-21 18:36:12 | INFO    | - | TOOL kb_search | query='I find new vaccine recommendation 2026' top_k=0
+2026-11-21 18:36:12 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.04 ttl_left=Nones
+2026-11-21 18:36:12 | INFO    | - | RETRIEVAL cache MISS | q='I find new vaccine recommendation 2026' get_ms=1.04 -> rag.retrieve
+2026-11-21 18:36:12 | INFO    | - | RAG retrieve | q='I find new vaccine recommendation 2026' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 49.6, 'rerank_ms': 382.3, 'compress_ms': 0.4, 'one_hit': False, 'returned': 2, 'ctx_chars': 343, 'avg_score': 0.473, 'term_coverage': 0.2, 'ms': 432.8} took=432.8 ms
+2026-11-21 18:36:12 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 49.6, "rerank_ms": 382.3, "compress_ms": 0.4, "one_hit": false, "returned": 2, "ctx_chars": 343, "avg_score": 0.473, "term_coverage": 0.2, "ms": 432.8, "top_score": 0.503}
+2026-11-21 18:36:12 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.69 ttl=300s bytes=1013
+2026-11-21 18:36:31 | INFO    | - | TOOL kb_search | query='New Vaccine Reconvention 2026 for TIFID' top_k=0
+2026-11-21 18:36:31 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.04 ttl_left=Nones
+2026-11-21 18:36:31 | INFO    | - | RETRIEVAL cache MISS | q='New Vaccine Reconvention 2026 for TIFID' get_ms=1.04 -> rag.retrieve
+2026-11-21 18:36:32 | INFO    | - | RAG retrieve | q='New Vaccine Reconvention 2026 for TIFID' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 36.9, 'rerank_ms': 348.0, 'compress_ms': 0.4, 'one_hit': False, 'returned': 2, 'ctx_chars': 343, 'avg_score': 0.417, 'term_coverage': 0.2, 'ms': 385.8} took=385.8 ms
+2026-11-21 18:36:32 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 36.9, "rerank_ms": 348.0, "compress_ms": 0.4, "one_hit": false, "returned": 2, "ctx_chars": 343, "avg_score": 0.417, "term_coverage": 0.2, "ms": 385.8, "top_score": 0.428}
+2026-11-21 18:36:32 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.62 ttl=300s bytes=989
+2026-11-21 18:36:33 | INFO    | - | TOOL web_search_save | question='New Vaccine Reconvention 2026 for TIFID' search_query='New Vaccine Reconvention 2026 TIFID definition healthcare context'
+2026-11-21 18:36:33 | INFO    | - | CACHE get | kind=web hit=False backend=redis ms=2.00 ttl_left=Nones
+2026-11-21 18:36:33 | INFO    | - | SERPAPI start | q='New Vaccine Reconvention 2026 TIFID definition healthcare context' hl=en
+2026-11-21 18:36:35 | INFO    | - | SERPAPI trusted-domain filter | dropped=5 kept_sources=1 domains=['cdn.who.int']
+2026-11-21 18:36:35 | INFO    | - | [SERPAPI] {"status": "ok", "found": true, "latency_ms": 2191.0, "organic": 9, "has_answer_box": false, "evidence_chars": 179, "untrusted_dropped": 5, "trusted_domains": ["cdn.who.int"]}
+2026-11-21 18:36:35 | INFO    | - | SERPAPI done | found=True organic=9 answer_box=False took=2191.0 ms | answer='final-highlights_18-march-2026.pdf: Continued expansion of typhoid conjugate vaccine (TCV) introduct'
+2026-11-21 18:36:35 | INFO    | - | CACHE set | kind=web backend=redis ms=1.77 ttl=86400s bytes=555
+2026-11-21 18:36:35 | INFO    | - | WEB staging new | key=944c100b12f4 domains=['cdn.who.int']
+2026-11-21 18:36:35 | INFO    | - | SERPAPI save | status=staged file=serpapi.md new_chunks=0 took=108.5 ms
+2026-11-21 18:36:35 | INFO    | - | [SERPAPI_SAVE] {"status": "staged", "new_chunks": 0, "latency_ms": 108.5}
+2026-11-21 18:53:45 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 18:53:45 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.62 ttl_left=Nones
+2026-11-21 18:53:45 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=0.62 -> rag.retrieve
+2026-11-21 18:53:46 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 84.0, 'rerank_ms': 1293.1, 'compress_ms': 0.0, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 1377.7} took=1377.7 ms
+2026-11-21 18:53:46 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 84.0, "rerank_ms": 1293.1, "compress_ms": 0.0, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 1377.7, "top_score": 0.431}
+2026-11-21 18:53:46 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.90 ttl=300s bytes=633
+2026-11-21 18:54:54 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 18:54:54 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=1.47 ttl_left=233s
+2026-11-21 18:54:54 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=233s get_ms=1.47
+2026-11-21 18:55:22 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 18:55:22 | INFO    | - | CACHE get | kind=ret hit=True backend=redis ms=0.74 ttl_left=204s
+2026-11-21 18:55:22 | INFO    | - | RETRIEVAL cache HIT | q='medicine order status' ttl_left=204s get_ms=0.74
+2026-11-21 18:56:31 | INFO    | - | TOOL kb_search | query='न्यू वैक्चीन रिकंडेंशन 2026 फोर टाइफाइड' top_k=0
+2026-11-21 18:56:31 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=4.44 ttl_left=Nones
+2026-11-21 18:56:31 | INFO    | - | RETRIEVAL cache MISS | q='न्यू वैक्चीन रिकंडेंशन 2026 फोर टाइफाइड' get_ms=4.44 -> rag.retrieve
+2026-11-21 18:56:32 | INFO    | - | RAG retrieve | q='न्यू वैक्चीन रिकंडेंशन 2026 फोर टाइफाइड' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': False, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 76.3, 'rerank_ms': 0.0, 'compress_ms': 0.0, 'one_hit': False, 'returned': 2, 'ctx_chars': 208, 'avg_score': 0.331, 'term_coverage': None, 'ms': 78.5} took=78.5 ms
+2026-11-21 18:56:32 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": false, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 76.3, "rerank_ms": 0.0, "compress_ms": 0.0, "one_hit": false, "returned": 2, "ctx_chars": 208, "avg_score": 0.331, "term_coverage": null, "ms": 78.5, "top_score": 0.332}
+2026-11-21 18:56:32 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.58 ttl=300s bytes=796
+2026-11-21 18:56:33 | INFO    | - | TOOL web_search_save | question='न्यू वैक्चीन रिकंडेंशन 2026 फोर टाइफाइड' search_query='Indian Government New Plan 2026 Medical Sector definition Hindi'
+2026-11-21 18:56:33 | INFO    | - | CACHE get | kind=web hit=False backend=redis ms=1.50 ttl_left=Nones
+2026-11-21 18:56:33 | INFO    | - | SERPAPI start | q='Indian Government New Plan 2026 Medical Sector definition Hindi' hl=en
+2026-11-21 18:56:35 | INFO    | - | SERPAPI trusted-domain filter | dropped=6 kept_sources=0 domains=[]
+2026-11-21 18:56:35 | INFO    | - | [SERPAPI] {"status": "ok", "found": false, "latency_ms": 2473.7, "organic": 8, "has_answer_box": false, "evidence_chars": 0, "untrusted_dropped": 6, "trusted_domains": []}
+2026-11-21 18:56:35 | INFO    | - | SERPAPI done | found=False organic=8 answer_box=False took=2473.7 ms | answer=''
+2026-11-21 18:56:35 | WARNING | - | SERPAPI no trusted-domain result (strict mode) | q='Indian Government New Plan 2026 Medical Sector definition Hindi' dropped=6
+2026-11-21 18:56:35 | INFO    | - | CACHE set | kind=web backend=redis ms=1.24 ttl=600s bytes=76
+2026-11-21 19:04:25 | INFO    | - | MCP tool registered | kb_search
+2026-11-21 19:04:25 | INFO    | - | MCP tool registered | kb_list_sources
+2026-11-21 19:04:25 | INFO    | - | MCP tool registered | kb_reindex
+2026-11-21 19:04:25 | INFO    | - | MCP tool registered | web_search_save
+2026-11-21 19:04:25 | INFO    | - | MCP server start | transport=streamable-http host=127.0.0.1 port=8001
+2026-11-21 19:04:25 | INFO    | - | RAG sync start | dir=C:\Users\qqq\Desktop\v2.222\data_basic files_found=3 force=False
+2026-11-21 19:04:28 | INFO    | - | RAG vector store open | dir=C:\Users\qqq\Desktop\v2.222\vectordb collection=healthcare_knowledge_base
+2026-11-21 19:04:28 | INFO    | - | RAG embed model load start | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-11-21 19:04:32 | INFO    | - | RAG embed model ready | model=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 load_ms=4378.7
+2026-11-21 19:04:33 | INFO    | - | RAG vector store ready | existing_chunks=462
+2026-11-21 19:04:33 | INFO    | - | [RAG_SYNC] {"indexed": [], "skipped": ["e-com.pdf", "healthcare_medical_e_commerce_complete_guide.md", "serpapi.md"], "removed": [], "chunks_added": 0, "chunks_deleted": 0, "total_chunks": 462, "sync_ms": 1.5}
+2026-11-21 19:04:33 | INFO    | - | RAG sync done | indexed=[] skipped=['e-com.pdf', 'healthcare_medical_e_commerce_complete_guide.md', 'serpapi.md'] removed=[] total_chunks=462 took=1.5 ms
+2026-11-21 19:04:33 | INFO    | - | RAG purge_expired | {'expired_chunks_removed': 0, 'expired_entries_removed': 0}
+2026-11-21 19:04:33 | INFO    | - | [RAG_PURGE] {"expired_chunks_removed": 0, "expired_entries_removed": 0}
+2026-11-21 19:04:33 | INFO    | - | RAG reranker load start | model=Xenova/ms-marco-MiniLM-L-6-v2
+2026-11-21 19:04:33 | INFO    | - | RAG reranker ready | load_ms=447.4
+2026-11-21 19:05:20 | INFO    | - | TOOL kb_search | query='medicine order status' top_k=1
+2026-11-21 19:05:21 | INFO    | - | CACHE redis client created | url=redis://localhost:6379/0
+2026-11-21 19:05:21 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.60 ttl_left=Nones
+2026-11-21 19:05:21 | INFO    | - | RETRIEVAL cache MISS | q='medicine order status' get_ms=0.60 -> rag.retrieve
+2026-11-21 19:05:21 | INFO    | - | RAG retrieve | q='medicine order status' {'k': 1, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 40.4, 'rerank_ms': 786.1, 'compress_ms': 0.1, 'one_hit': False, 'returned': 1, 'ctx_chars': 134, 'avg_score': 0.431, 'term_coverage': 0.0, 'ms': 828.0} took=828.0 ms
+2026-11-21 19:05:21 | INFO    | - | [RAG_RETRIEVE] {"k": 1, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 40.4, "rerank_ms": 786.1, "compress_ms": 0.1, "one_hit": false, "returned": 1, "ctx_chars": 134, "avg_score": 0.431, "term_coverage": 0.0, "ms": 828.0, "top_score": 0.431}
+2026-11-21 19:05:22 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.81 ttl=300s bytes=631
+2026-11-21 19:06:30 | INFO    | - | TOOL kb_search | query='What are the symptoms of malaria?' top_k=0
+2026-11-21 19:06:30 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.64 ttl_left=Nones
+2026-11-21 19:06:30 | INFO    | - | RETRIEVAL cache MISS | q='What are the symptoms of malaria?' get_ms=0.64 -> rag.retrieve
+2026-11-21 19:06:31 | INFO    | - | RAG retrieve | q='What are the symptoms of malaria?' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 33.1, 'rerank_ms': 418.6, 'compress_ms': 0.2, 'one_hit': False, 'returned': 2, 'ctx_chars': 359, 'avg_score': 0.569, 'term_coverage': 0.5, 'ms': 452.5} took=452.5 ms
+2026-11-21 19:06:31 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 33.1, "rerank_ms": 418.6, "compress_ms": 0.2, "one_hit": false, "returned": 2, "ctx_chars": 359, "avg_score": 0.569, "term_coverage": 0.5, "ms": 452.5, "top_score": 0.597}
+2026-11-21 19:06:31 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.65 ttl=300s bytes=1234
+2026-11-21 19:06:32 | INFO    | - | TOOL web_search_save | question='What are the symptoms of malaria?' search_query='malaria symptoms list'
+2026-11-21 19:06:32 | INFO    | - | CACHE get | kind=web hit=False backend=redis ms=2.38 ttl_left=Nones
+2026-11-21 19:06:32 | INFO    | - | SERPAPI start | q='malaria symptoms list' hl=en
+2026-11-21 19:06:36 | INFO    | - | SERPAPI trusted-domain filter | dropped=2 kept_sources=1 domains=['mayoclinic.org']
+2026-11-21 19:06:36 | INFO    | - | [SERPAPI] {"status": "ok", "found": true, "latency_ms": 4082.5, "organic": 7, "has_answer_box": false, "evidence_chars": 175, "untrusted_dropped": 2, "trusted_domains": ["mayoclinic.org"]}
+2026-11-21 19:06:36 | INFO    | - | SERPAPI done | found=True organic=7 answer_box=False took=4082.5 ms | answer='Malaria - Symptoms and causes: Signs and symptoms of malaria may include: Fever Chills General feeli'
+2026-11-21 19:06:36 | INFO    | - | CACHE set | kind=web backend=redis ms=1.71 ttl=86400s bytes=524
+2026-11-21 19:06:36 | INFO    | - | WEB staging new | key=d8cf6538768a domains=['mayoclinic.org']
+2026-11-21 19:06:36 | INFO    | - | SERPAPI save | status=staged file=serpapi.md new_chunks=0 took=144.2 ms
+2026-11-21 19:06:36 | INFO    | - | [SERPAPI_SAVE] {"status": "staged", "new_chunks": 0, "latency_ms": 144.2}
+2026-11-21 19:07:11 | INFO    | - | TOOL kb_search | query='What is B2C in Medical Sector?' top_k=0
+2026-11-21 19:07:11 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.55 ttl_left=Nones
+2026-11-21 19:07:11 | INFO    | - | RETRIEVAL cache MISS | q='What is B2C in Medical Sector?' get_ms=0.55 -> rag.retrieve
+2026-11-21 19:07:12 | INFO    | - | RAG retrieve | q='What is B2C in Medical Sector?' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 62.2, 'rerank_ms': 750.5, 'compress_ms': 0.3, 'one_hit': False, 'returned': 2, 'ctx_chars': 399, 'avg_score': 0.544, 'term_coverage': 1.0, 'ms': 814.2} took=814.2 ms
+2026-11-21 19:07:12 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 62.2, "rerank_ms": 750.5, "compress_ms": 0.3, "one_hit": false, "returned": 2, "ctx_chars": 399, "avg_score": 0.544, "term_coverage": 1.0, "ms": 814.2, "top_score": 0.529}
+2026-11-21 19:07:12 | INFO    | - | CACHE set | kind=ret backend=redis ms=1.49 ttl=300s bytes=1078
+2026-11-21 19:08:18 | INFO    | - | TOOL kb_search | query='What are the healthcare, AI, e-commerce, enroll?' top_k=0
+2026-11-21 19:08:18 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.81 ttl_left=Nones
+2026-11-21 19:08:18 | INFO    | - | RETRIEVAL cache MISS | q='What are the healthcare, AI, e-commerce, enroll?' get_ms=1.81 -> rag.retrieve
+2026-11-21 19:08:18 | INFO    | - | RAG retrieve | q='What are the healthcare, AI, e-commerce, enroll?' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 62.5, 'rerank_ms': 335.9, 'compress_ms': 0.6, 'one_hit': False, 'returned': 3, 'ctx_chars': 586, 'avg_score': 0.652, 'term_coverage': 0.67, 'ms': 400.1} took=400.1 ms
+2026-11-21 19:08:18 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 62.5, "rerank_ms": 335.9, "compress_ms": 0.6, "one_hit": false, "returned": 3, "ctx_chars": 586, "avg_score": 0.652, "term_coverage": 0.67, "ms": 400.1, "top_score": 0.663}
+2026-11-21 19:08:18 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.78 ttl=300s bytes=1397
+2026-11-21 19:08:19 | INFO    | - | TOOL web_search_save | question='What are the healthcare, AI, e-commerce, enroll?' search_query='enroll healthcare e-commerce definition'
+2026-11-21 19:08:19 | INFO    | - | CACHE get | kind=web hit=False backend=redis ms=1.06 ttl_left=Nones
+2026-11-21 19:08:19 | INFO    | - | SERPAPI start | q='enroll healthcare e-commerce definition' hl=en
+2026-11-21 19:08:21 | INFO    | - | SERPAPI trusted-domain filter | dropped=3 kept_sources=0 domains=[]
+2026-11-21 19:08:21 | INFO    | - | [SERPAPI] {"status": "ok", "found": false, "latency_ms": 2017.2, "organic": 9, "has_answer_box": false, "evidence_chars": 0, "untrusted_dropped": 3, "trusted_domains": []}
+2026-11-21 19:08:21 | INFO    | - | SERPAPI done | found=False organic=9 answer_box=False took=2017.2 ms | answer=''
+2026-11-21 19:08:21 | WARNING | - | SERPAPI no trusted-domain result (strict mode) | q='enroll healthcare e-commerce definition' dropped=3
+2026-11-21 19:08:21 | INFO    | - | CACHE set | kind=web backend=redis ms=0.81 ttl=1800s bytes=76
+2026-11-21 19:08:50 | INFO    | - | TOOL kb_search | query='What is the role of AI healthcare e-commerce?' top_k=0
+2026-11-21 19:08:50 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=2.18 ttl_left=Nones
+2026-11-21 19:08:50 | INFO    | - | RETRIEVAL cache MISS | q='What is the role of AI healthcare e-commerce?' get_ms=2.18 -> rag.retrieve
+2026-11-21 19:08:51 | INFO    | - | RAG retrieve | q='What is the role of AI healthcare e-commerce?' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 65.4, 'rerank_ms': 257.5, 'compress_ms': 0.4, 'one_hit': False, 'returned': 3, 'ctx_chars': 586, 'avg_score': 0.809, 'term_coverage': 0.67, 'ms': 323.9} took=323.9 ms
+2026-11-21 19:08:51 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 65.4, "rerank_ms": 257.5, "compress_ms": 0.4, "one_hit": false, "returned": 3, "ctx_chars": 586, "avg_score": 0.809, "term_coverage": 0.67, "ms": 323.9, "top_score": 0.818}
+2026-11-21 19:08:51 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.54 ttl=300s bytes=1397
+2026-11-21 19:09:19 | INFO    | - | TOOL kb_search | query='लू लगने की लक्षण क्या हैं?' top_k=0
+2026-11-21 19:09:19 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=5.29 ttl_left=Nones
+2026-11-21 19:09:19 | INFO    | - | RETRIEVAL cache MISS | q='लू लगने की लक्षण क्या हैं?' get_ms=5.29 -> rag.retrieve
+2026-11-21 19:09:19 | INFO    | - | RAG retrieve | q='लू लगने की लक्षण क्या हैं?' {'k': 2, 'fetched': 6, 'after_filter': 6, 'reranked': False, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 43.8, 'rerank_ms': 0.0, 'compress_ms': 0.3, 'one_hit': False, 'returned': 2, 'ctx_chars': 328, 'avg_score': 0.647, 'term_coverage': None, 'ms': 44.9} took=44.9 ms
+2026-11-21 19:09:19 | INFO    | - | [RAG_RETRIEVE] {"k": 2, "fetched": 6, "after_filter": 6, "reranked": false, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 43.8, "rerank_ms": 0.0, "compress_ms": 0.3, "one_hit": false, "returned": 2, "ctx_chars": 328, "avg_score": 0.647, "term_coverage": null, "ms": 44.9, "top_score": 0.65}
+2026-11-21 19:09:19 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.78 ttl=300s bytes=1140
+2026-11-21 19:11:15 | INFO    | - | TOOL kb_search | query='What is D2C in medical sector and B2C?' top_k=0
+2026-11-21 19:11:15 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=1.45 ttl_left=Nones
+2026-11-21 19:11:15 | INFO    | - | RETRIEVAL cache MISS | q='What is D2C in medical sector and B2C?' get_ms=1.45 -> rag.retrieve
+2026-11-21 19:11:16 | INFO    | - | RAG retrieve | q='What is D2C in medical sector and B2C?' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': True, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 60.1, 'rerank_ms': 473.8, 'compress_ms': 1.1, 'one_hit': False, 'returned': 3, 'ctx_chars': 590, 'avg_score': 0.622, 'term_coverage': 1.0, 'ms': 536.2} took=536.2 ms
+2026-11-21 19:11:16 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": true, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 60.1, "rerank_ms": 473.8, "compress_ms": 1.1, "one_hit": false, "returned": 3, "ctx_chars": 590, "avg_score": 0.622, "term_coverage": 1.0, "ms": 536.2, "top_score": 0.604}
+2026-11-21 19:11:16 | INFO    | - | CACHE set | kind=ret backend=redis ms=1.10 ttl=300s bytes=1470
+2026-11-21 19:12:36 | INFO    | - | TOOL kb_search | query='रिसेंट्ली चिकन कुनिया आउट व्रेक ओफ इंडिया' top_k=0
+2026-11-21 19:12:36 | INFO    | - | CACHE get | kind=ret hit=False backend=redis ms=0.63 ttl_left=Nones
+2026-11-21 19:12:36 | INFO    | - | RETRIEVAL cache MISS | q='रिसेंट्ली चिकन कुनिया आउट व्रेक ओफ इंडिया' get_ms=0.63 -> rag.retrieve
+2026-11-21 19:12:36 | INFO    | - | RAG retrieve | q='रिसेंट्ली चिकन कुनिया आउट व्रेक ओफ इंडिया' {'k': 3, 'fetched': 6, 'after_filter': 6, 'reranked': False, 'expired_skipped': 0, 'web_dropped': 0, 'dense_ms': 78.6, 'rerank_ms': 0.0, 'compress_ms': 0.1, 'one_hit': False, 'returned': 3, 'ctx_chars': 602, 'avg_score': 0.397, 'term_coverage': None, 'ms': 79.2} took=79.2 ms
+2026-11-21 19:12:36 | INFO    | - | [RAG_RETRIEVE] {"k": 3, "fetched": 6, "after_filter": 6, "reranked": false, "expired_skipped": 0, "web_dropped": 0, "dense_ms": 78.6, "rerank_ms": 0.0, "compress_ms": 0.1, "one_hit": false, "returned": 3, "ctx_chars": 602, "avg_score": 0.397, "term_coverage": null, "ms": 79.2, "top_score": 0.414}
+2026-11-21 19:12:36 | INFO    | - | CACHE set | kind=ret backend=redis ms=0.56 ttl=300s bytes=1280

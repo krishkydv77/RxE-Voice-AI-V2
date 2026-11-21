@@ -1,0 +1,4 @@
+[
+  {"q": "what is your return policy", "sources": ["returns.md"], "keywords": ["return"]},
+  {"q": "how long does delivery take", "sources": ["delivery.md"], "keywords": ["delivery", "days"]}
+]

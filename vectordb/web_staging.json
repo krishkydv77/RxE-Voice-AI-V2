@@ -1,0 +1,38 @@
+{
+ "944c100b12f4": {
+  "question": "New Vaccine Reconvention 2026 for TIFID",
+  "qn": "new vaccine reconvention 2026 for tifid",
+  "sq": "b26f58a3bb7d",
+  "search_query": "New Vaccine Reconvention 2026 TIFID definition healthcare context",
+  "answer": "final-highlights_18-march-2026.pdf: Continued expansion of typhoid conjugate vaccine (TCV) introduction and support for potential future vaccines such as tuberculosis and dengue",
+  "details": "- final-highlights_18-march-2026.pdf: Continued expansion of typhoid conjugate vaccine (TCV) introduction and support for potential future vaccines such as tuberculosis and dengue",
+  "domains": [
+   "cdn.who.int"
+  ],
+  "links": [
+   "https://cdn.who.int/media/docs/default-source/_sage-2026/final-highlights_18-march-2026.pdf?sfvrsn=c5461229_1"
+  ],
+  "hits": 1,
+  "first_seen": 1795266395.2777033,
+  "last_seen": 1795266395.2777033,
+  "expires": 1795871195.2777033
+ },
+ "d8cf6538768a": {
+  "question": "What are the symptoms of malaria?",
+  "qn": "what are the symptoms of malaria",
+  "sq": "1e67ad6514c5",
+  "search_query": "malaria symptoms list",
+  "answer": "Malaria - Symptoms and causes: Signs and symptoms of malaria may include: Fever Chills General feeling of discomfort Headache Nausea and vomiting Diarrhea Abdominal pain ...",
+  "details": "- Malaria - Symptoms and causes: Signs and symptoms of malaria may include: Fever Chills General feeling of discomfort Headache Nausea and vomiting Diarrhea Abdominal pain ...",
+  "domains": [
+   "mayoclinic.org"
+  ],
+  "links": [
+   "https://www.mayoclinic.org/diseases-conditions/malaria/symptoms-causes/syc-20351184"
+  ],
+  "hits": 1,
+  "first_seen": 1795268196.3053603,
+  "last_seen": 1795268196.3053603,
+  "expires": 1795872996.3053603
+ }
+}

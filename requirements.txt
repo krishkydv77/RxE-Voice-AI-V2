@@ -1,0 +1,24 @@
+# Web server
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+python-dotenv>=1.0
+
+# Groq (LLM + Whisper STT), Sarvam (TTS) + SerpAPI calls
+httpx[http2]>=0.27
+groq>=0.9
+
+# Cache (Redis optional - REDIS_URL na ho to in-memory fallback)
+redis>=5.0
+
+# LangChain: chunking, embedding, vector store, loaders
+langchain-core>=0.2
+langchain-text-splitters>=0.2
+langchain-community>=0.2
+langchain-chroma>=0.1.2
+chromadb>=0.5
+fastembed>=0.4.2        # TextCrossEncoder (reranker) ke liye >=0.4
+pypdf>=4.0
+
+# MCP server
+mcp>=1.2,<2

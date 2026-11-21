@@ -1,0 +1,26 @@
+{
+  "healthcare_medical_e_commerce_complete_guide.md": {
+    "sha256": "f7154755bcdccdbe138619f8c7b0ba426c9bdf7579e2e9914be755975b5dc7f0",
+    "size": 45203,
+    "mtime_ns": 1793158250328770300,
+    "chunks": 121,
+    "type": "md",
+    "indexed_at": "2026-11-21T13:47:16"
+  },
+  "serpapi.md": {
+    "sha256": "a6195348b75da82fa4588c24187e321263f7f70b7bcc932fb5b8b54e53b92647",
+    "size": 44607,
+    "mtime_ns": 1793986702176545500,
+    "chunks": 127,
+    "type": "md",
+    "indexed_at": "2026-11-21T13:47:30"
+  },
+  "e-com.pdf": {
+    "sha256": "e2b535e1acb614bb6edd12a47bdf4e534fc989fa3257ca1d8ff891ce808843f7",
+    "size": 204417,
+    "mtime_ns": 1795250709422140500,
+    "chunks": 214,
+    "type": "pdf",
+    "indexed_at": "2026-11-21T14:17:55"
+  }
+}
